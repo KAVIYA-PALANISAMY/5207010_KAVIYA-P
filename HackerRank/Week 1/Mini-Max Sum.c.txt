@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main(){
+    long arr[5];
+    for(int i=0;i<5;i++){
+        scanf("%ld",&arr[i]);
+    }
+    for(int i=0;i<5;i++){
+        for(int j=i+1;j<5;j++){
+            if(arr[i]>arr[j]){
+                long temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    long max=0;
+    long min=0;
+    for(int i=1;i<5;i++){
+        max=max+arr[i];
+    }
+    for(int i=0;i<4;i++){
+        min=min+arr[i];
+    }
+    printf("%ld %ld",min,max);
+    return 0;
+}
