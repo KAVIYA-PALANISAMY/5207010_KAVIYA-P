@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n1;
+    scanf("%d\n", &n1);
+
+    char sen1[n1][100];  // Array of strings
+
+    for (int i = 0; i < n1; i++) {
+        scanf("%s", sen1[i]);
+    }
+
+    int n2;
+    scanf("%d\n", &n2);
+
+    char sen2[n2][100];  // Another array of strings
+
+    for (int i = 0; i < n2; i++) {
+        scanf("%s", sen2[i]);
+    }
+
+    for (int i = 0; i < n2; i++) {
+        int c = 0;
+        for (int j = 0; j < n1; j++) {
+            if (strcmp(sen2[i], sen1[j]) == 0) {
+                c++;
+            }
+        }
+        printf("%d\n", c);
+    }
+
+    return 0;
+}

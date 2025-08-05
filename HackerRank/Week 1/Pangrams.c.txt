@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){
+    char s[1000];
+    scanf("%[^\n]",s);
+    char alpha[26]="abcdefghijklmnopqrstuvwxyz";
+    int l=strlen(s);
+    int z=0;
+    for(int i=0;i<26;i++){
+        int c=0;
+        for(int j=0;j<l;j++){
+            if(tolower(s[j])==alpha[i]){
+                c++;
+            }
+        }
+        // printf("%d",c);
+        if(c>0){
+            z++;
+        }
+    }
+    if(z<26){
+        printf("not pangram");
+    }
+    else{
+        printf("pangram");
+    }
+    return 0;
+}
